@@ -9,10 +9,10 @@ const client = new Discord.Client({
 
 let executedOnStart = false;
 
-let scedule = [
+let schedule = [
     {
-        startHour: 11,
-        startMinute: 0,
+        startHour: 22,
+        startMinute: 30,
         startSecond: 1,
         execute: () => {
             client.user.setPresence({
@@ -27,8 +27,8 @@ let scedule = [
         },
     },
     {
-        startHour: 11,
-        startMinute: 30,
+        startHour: 23,
+        startMinute: 0,
         startSecond: 1,
         execute: () => {
             client.user.setPresence({
@@ -43,8 +43,8 @@ let scedule = [
         },
     },
     {
-        startHour: 15,
-        startMinute: 0,
+        startHour: 2,
+        startMinute: 30,
         startSecond: 1,
         execute: () => {
             client.user.setPresence({
@@ -59,8 +59,8 @@ let scedule = [
         },
     },
     {
-        startHour: 15,
-        startMinute: 40,
+        startHour: 3,
+        startMinute: 10,
         startSecond: 1,
         execute: () => {
             client.user.setPresence({
@@ -75,8 +75,8 @@ let scedule = [
         },
     },
     {
-        startHour: 17,
-        startMinute: 30,
+        startHour: 5,
+        startMinute: 0,
         startSecond: 1,
         execute: () => {
             client.user.setPresence({
@@ -91,8 +91,8 @@ let scedule = [
         },
     },
     {
-        startHour: 18,
-        startMinute: 30,
+        startHour: 6,
+        startMinute: 0,
         startSecond: 1,
         execute: () => {
             client.user.setPresence({
@@ -107,8 +107,8 @@ let scedule = [
         },
     },
     {
-        startHour: 19,
-        startMinute: 30,
+        startHour: 7,
+        startMinute: 0,
         startSecond: 1,
         execute: () => {
             client.user.setPresence({
@@ -123,8 +123,8 @@ let scedule = [
         },
     },
     {
-        startHour: 23,
-        startMinute: 6,
+        startHour: 10,
+        startMinute: 36,
         startSecond: 30,
         execute: () => {
             client.user.setPresence({
