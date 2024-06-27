@@ -1,7 +1,17 @@
-const keepAlive = require("./server.js");
 const Discord = require("discord.js-selfbot-v13");
 require('dotenv').config();
+const express = require('express');
+const port = 3000 || process.env.PORT;
 
+const app = express();
+
+app.all("/", (req, res) => {
+  res.send("its running!");
+});
+
+app.listen(port, () => {
+  console.log("Server is ready!");
+});
 
 const client = new Discord.Client({
     checkUpdate: false,
@@ -210,9 +220,8 @@ setInterval(executeScheduledCode, 1000);
 
 // Error handling for client login
 try {
-    client.login(process.env["TOKEN"]);
+    client.login(process.env.TOKEN);
 } catch (error) {
     console.error("Error during login:", error);
 }
 
-keepAlive();
