@@ -11,8 +11,8 @@ let executedOnStart = false;
 
 let scedule = [
     {
-        startHour: 0,
-        startMinute: 30,
+        startHour: 11,
+        startMinute: 0,
         startSecond: 1,
         execute: () => {
             client.user.setPresence({
@@ -27,7 +27,7 @@ let scedule = [
         },
     },
     {
-        startHour: 1,
+        startHour: 11,
         startMinute: 30,
         startSecond: 1,
         execute: () => {
@@ -43,14 +43,14 @@ let scedule = [
         },
     },
     {
-        startHour: 4,
+        startHour: 15,
         startMinute: 0,
         startSecond: 1,
         execute: () => {
             client.user.setPresence({
                 activities: [
                     {
-                        name: "Learning 'c'",
+                        name: "Having Lunch At School",
                         type: "PLAYING",
                     },
                 ],
@@ -59,98 +59,18 @@ let scedule = [
         },
     },
     {
-        startHour: 5,
-        startMinute: 0,
+        startHour: 15,
+        startMinute: 40,
         startSecond: 1,
         execute: () => {
             client.user.setPresence({
                 activities: [
                     {
-                        name: "Cleaning Setup",
-                        type: "PLAYING",
-                    },
-                ],
-                status: "idle",
-            });
-        },
-    },
-    {
-        startHour: 5,
-        startMinute: 30,
-        startSecond: 1,
-        execute: () => {
-            client.user.setPresence({
-                activities: [
-                    {
-                        name: "Chillin ☕",
-                        type: "PLAYING",
-                    },
-                ],
-                status: "idle",
-            });
-        },
-    },
-    {
-        startHour: 11,
-        startMinute: 20,
-        startSecond: 1,
-        execute: () => {
-            client.user.setPresence({
-                activities: [
-                    {
-                        name: "Getting Ready For Tution",
-                        type: "PLAYING",
-                    },
-                ],
-                status: "idle",
-            });
-        },
-    },
-    {
-        startHour: 11,
-        startMinute: 30,
-        startSecond: 1,
-        execute: () => {
-            client.user.setPresence({
-                activities: [
-                    {
-                        name: "Math's Tution",
+                        name: "In School rn",
                         type: "PLAYING",
                     },
                 ],
                 status: "dnd",
-            });
-        },
-    },
-    {
-        startHour: 12,
-        startMinute: 30,
-        startSecond: 1,
-        execute: () => {
-            client.user.setPresence({
-                activities: [
-                    {
-                        name: "Free Fire",
-                        type: "PLAYING",
-                    },
-                ],
-                status: "idle",
-            });
-        },
-    },
-    {
-        startHour: 14,
-        startMinute: 0,
-        startSecond: 1,
-        execute: () => {
-            client.user.setPresence({
-                activities: [
-                    {
-                        name: "Chillin ☕",
-                        type: "PLAYING",
-                    },
-                ],
-                status: "idle",
             });
         },
     },
@@ -162,7 +82,55 @@ let scedule = [
             client.user.setPresence({
                 activities: [
                     {
-                        name: "Sleep",
+                        name: "Chillin ☕",
+                        type: "PLAYING",
+                    },
+                ],
+                status: "idle",
+            });
+        },
+    },
+    {
+        startHour: 18,
+        startMinute: 30,
+        startSecond: 1,
+        execute: () => {
+            client.user.setPresence({
+                activities: [
+                    {
+                        name: "In Math's Tution",
+                        type: "PLAYING",
+                    },
+                ],
+                status: "dnd",
+            });
+        },
+    },
+    {
+        startHour: 19,
+        startMinute: 30,
+        startSecond: 1,
+        execute: () => {
+            client.user.setPresence({
+                activities: [
+                    {
+                        name: "Chillin ☕",
+                        type: "PLAYING",
+                    },
+                ],
+                status: "idle",
+            });
+        },
+    },
+    {
+        startHour: 23,
+        startMinute: 6,
+        startSecond: 30,
+        execute: () => {
+            client.user.setPresence({
+                activities: [
+                    {
+                        name: "Sleeping",
                         type: "PLAYING",
                     },
                 ],
@@ -198,15 +166,20 @@ function executeOnStart() {
     const currentTime = getTime();
     console.log(currentTime)
     for (let i = 0; i < scedule.length; i++) {
-        if(i + 1 == scedule.length){
+        if (i + 1 == scedule.length) {
             break;
         }
         if (currentTime.currentHour > scedule[i].startHour && currentTime.currentHour < scedule[i + 1].startHour) {
             scedule[i].execute();
+            console.log("executed: ");
+            console.log(scedule[i]);
             break;
         } else if (currentTime.currentHour == scedule[i].startHour && currentTime.currentHour == scedule[i + 1].startHour) {
             if (currentTime.currentMinutes > scedule[i].startMinute && currentTime.currentMinutes < scedule[i + 1].startMinute) {
                 scedule[i].execute();
+                console.log("executed: ");
+                console.log(scedule[i]);
+
                 break;
             }
         }
