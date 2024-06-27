@@ -21,7 +21,55 @@ let executedOnStart = false;
 
 let scedule = [
     {
-        startHour: 22,
+        startHour: 18,  // 7:00 AM IST -> 6:00 PM PDT previous day
+        startMinute: 30,
+        startSecond: 1,
+        execute: () => {
+            client.user.setPresence({
+                activities: [
+                    {
+                        name: "Chillin ☕",
+                        type: "PLAYING",
+                    },
+                ],
+                status: "idle",
+            });
+        },
+    },
+    {
+        startHour: 20,  // 9:00 AM IST -> 8:00 PM PDT previous day
+        startMinute: 30,
+        startSecond: 1,
+        execute: () => {
+            client.user.setPresence({
+                activities: [
+                    {
+                        name: "In Math's Tution",
+                        type: "PLAYING",
+                    },
+                ],
+                status: "dnd",
+            });
+        },
+    },
+    {
+        startHour: 21,  // 9:45 AM IST -> 9:15 PM PDT previous day
+        startMinute: 15,
+        startSecond: 1,
+        execute: () => {
+            client.user.setPresence({
+                activities: [
+                    {
+                        name: "Chillin ☕",
+                        type: "PLAYING",
+                    },
+                ],
+                status: "idle",
+            });
+        },
+    },
+    {
+        startHour: 22,  // 11:00 AM IST -> 10:30 PM PDT previous day
         startMinute: 30,
         startSecond: 1,
         execute: () => {
@@ -37,7 +85,7 @@ let scedule = [
         },
     },
     {
-        startHour: 23,
+        startHour: 23,  // 11:30 AM IST -> 11:00 PM PDT previous day
         startMinute: 0,
         startSecond: 1,
         execute: () => {
@@ -53,7 +101,7 @@ let scedule = [
         },
     },
     {
-        startHour: 2,
+        startHour: 2,  // 3:00 PM IST -> 2:30 AM PDT
         startMinute: 30,
         startSecond: 1,
         execute: () => {
@@ -69,7 +117,7 @@ let scedule = [
         },
     },
     {
-        startHour: 3,
+        startHour: 3,  // 3:40 PM IST -> 3:10 AM PDT
         startMinute: 10,
         startSecond: 1,
         execute: () => {
@@ -85,7 +133,7 @@ let scedule = [
         },
     },
     {
-        startHour: 5,
+        startHour: 5,  // 5:30 PM IST -> 5:00 AM PDT
         startMinute: 0,
         startSecond: 1,
         execute: () => {
@@ -101,7 +149,7 @@ let scedule = [
         },
     },
     {
-        startHour: 6,
+        startHour: 6,  // 6:30 PM IST -> 6:00 AM PDT
         startMinute: 0,
         startSecond: 1,
         execute: () => {
@@ -117,7 +165,7 @@ let scedule = [
         },
     },
     {
-        startHour: 7,
+        startHour: 7,  // 7:30 PM IST -> 7:00 AM PDT
         startMinute: 0,
         startSecond: 1,
         execute: () => {
@@ -133,7 +181,7 @@ let scedule = [
         },
     },
     {
-        startHour: 10,
+        startHour: 10,  // 11:06 PM IST -> 10:36 AM PDT
         startMinute: 36,
         startSecond: 30,
         execute: () => {
@@ -149,6 +197,7 @@ let scedule = [
         },
     },
 ];
+
 
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
