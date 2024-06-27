@@ -19,7 +19,7 @@ const client = new Discord.Client({
 
 let executedOnStart = false;
 
-let schedule = [
+let scedule = [
     {
         startHour: 22,
         startMinute: 30,
